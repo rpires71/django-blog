@@ -31,8 +31,7 @@ SECRET_KEY = 'django-insecure-0yo)_8t%(d+*lj4f6&b)!@@odwn^73n64_iu8^zge5_d)mi)qz
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '8000-rpires.gitpod.io', # Your local development URL
-    '.herokuapp.com',
+   '127.0.0.1', 'localhost', '.herokuapp.com',
 ]
 
 
@@ -92,6 +91,11 @@ WSGI_APPLICATION = 'djangoblog.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
+]
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 # Password validation
